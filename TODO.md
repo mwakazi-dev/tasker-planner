@@ -10,7 +10,7 @@
 
 ### D – Design  
 - Split logic into service & UI
-- Two components: `task-list` and `task-input` and `task-list-item`
+- Three components: `task-list` and `task-input` and `task-list-item`
 - Use Angular binding + directives
 
 ### E – Execute  
