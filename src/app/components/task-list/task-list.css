@@ -1,0 +1,8 @@
+ul {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  list-style-type: none;
+  width: 60%;
+  margin: 30px auto;
+}

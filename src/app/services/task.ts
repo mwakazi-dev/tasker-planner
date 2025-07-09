@@ -4,8 +4,19 @@ import { type ITask } from '../models/task.model';
 @Injectable({
   providedIn: 'root',
 })
-export class Task {
-  private _tasks: ITask[] = [];
+export class TaskService {
+  private _tasks: ITask[] = [
+    {
+      id: 1,
+      title: 'Test',
+      status: 'INCOMPLETE',
+    },
+    {
+      id: 2,
+      title: 'Test 2',
+      status: 'INCOMPLETE',
+    },
+  ];
 
   addTask(_task: ITask) {
     this._tasks = [...this._tasks, _task];
