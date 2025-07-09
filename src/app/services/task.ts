@@ -1,32 +1,28 @@
-import { Injectable } from '@angular/core';
+import { computed, Injectable, OnInit, signal } from '@angular/core';
 import { type ITask } from '../models/task.model';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TaskService {
-  private _tasks: ITask[] = [
+  private _tasks = signal<ITask[]>([
     {
       id: 1,
-      title: 'Test',
+      title: 'One',
       status: 'INCOMPLETE',
     },
-    {
-      id: 2,
-      title: 'Test 2',
-      status: 'INCOMPLETE',
-    },
-  ];
+  ]);
+
+  tasks = computed(() => this._tasks());
 
   addTask(_task: ITask) {
-    this._tasks = [...this._tasks, _task];
+    const newTasks = [...this._tasks(), _task];
+    this._tasks.set(newTasks);
   }
 
   deleteTask(id: number) {
-    this._tasks = this._tasks.filter((_task) => _task.id !== id);
-  }
-
-  get tasks() {
-    return this._tasks;
+    const filteredTasks = this._tasks().filter((_task) => _task.id !== id);
+    this._tasks.set(filteredTasks);
+    console.log('from services: ', this.tasks());
   }
 }
