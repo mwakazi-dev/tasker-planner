@@ -1,1 +1,4 @@
-<p>task-input works!</p>
+<div [class]="'input-container'">
+  <input placeholder="Add your task" [(ngModel)]="value" />
+  <button appButton (click)="onClick()">Add task</button>
+</div>

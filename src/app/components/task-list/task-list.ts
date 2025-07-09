@@ -18,4 +18,8 @@ export class TaskList implements OnInit {
     this.tasks = this._tasks.tasks;
     console.log(this.tasks);
   }
+
+  onDelete(event: any) {
+    console.log(event);
+  }
 }

@@ -4,6 +4,7 @@
     [id]="task.id"
     [title]="task.title"
     [status]="task.status"
+    (_onClick)="onDelete($event)"
   />
   }
 </ul>

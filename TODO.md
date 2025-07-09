@@ -15,9 +15,9 @@
 
 ### E – Execute  
 - Build feature by feature:
-  - [ ] Display task list using `*ngFor`
-  - [ ] Add task with input + `(click)`
-  - [ ] Delete task with `(click)`
+  - [x] Display task list using `*ngFor`
+  - [x] Add task with input + `(click)`
+  - [x] Delete task with `(click)`
   - [ ] (Optional) Mark as done
 
 ### A – Analyze  
