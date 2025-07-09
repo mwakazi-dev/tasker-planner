@@ -15,8 +15,13 @@ export class TaskService {
 
   tasks = computed(() => this._tasks());
 
-  addTask(_task: ITask) {
-    const newTasks = [...this._tasks(), _task];
+  addTask(taskTitle: string) {
+    const newTask: ITask = {
+      id: this._tasks().length + 1,
+      title: taskTitle,
+      status: 'INCOMPLETE',
+    };
+    const newTasks = [...this._tasks(), newTask];
     this._tasks.set(newTasks);
   }
 

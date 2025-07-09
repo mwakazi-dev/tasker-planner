@@ -1,10 +1,15 @@
-<ul>
-  @for(task of taskService.tasks(); track task.id){
-  <app-task-list-item
-    [id]="task.id"
-    [title]="task.title"
-    [status]="task.status"
-    (_onClick)="onDelete($event)"
-  />
-  }
-</ul>
+<header>
+  <app-task-input (_onClick)="onAdd($event)" />
+</header>
+<main>
+  <ul>
+    @for(task of taskService.tasks(); track task.id){
+    <app-task-list-item
+      [id]="task.id"
+      [title]="task.title"
+      [status]="task.status"
+      (_onClick)="onDelete($event)"
+    />
+    }
+  </ul>
+</main>
